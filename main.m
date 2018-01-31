@@ -126,17 +126,17 @@ inputPCA = input(1:8,:);
 % inputPCAMLP15203 =  MLP([15 20],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP15203');
 
 
-inputPCAMLP201 = MLP(20,Training,Validation,Test,End,inputPCA,target,'inputPCAMLP201');
-inputPCAMLP202 = MLP(20,Training,Validation,Test,End,inputPCA,target,'inputPCAMLP202');
-inputPCAMLP203 = MLP(20,Training,Validation,Test,End,inputPCA,target,'inputPCAMLP203');
-
-inputPCAMLP5101  =  MLP([5 10],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP5101');
-inputPCAMLP5102  =  MLP([5 10],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP5102');
-inputPCAMLP5103  =  MLP([5 10],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP5103');
-
-inputPCAMLP10151 =  MLP([10 15],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP10151');
-inputPCAMLP10152 =  MLP([10 15],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP10152');
-inputPCAMLP10153 =  MLP([10 15],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP10153');
+% inputPCAMLP201 = MLP(20,Training,Validation,Test,End,inputPCA,target,'inputPCAMLP201');
+% inputPCAMLP202 = MLP(20,Training,Validation,Test,End,inputPCA,target,'inputPCAMLP202');
+% inputPCAMLP203 = MLP(20,Training,Validation,Test,End,inputPCA,target,'inputPCAMLP203');
+% 
+% inputPCAMLP5101  =  MLP([5 10],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP5101');
+% inputPCAMLP5102  =  MLP([5 10],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP5102');
+% inputPCAMLP5103  =  MLP([5 10],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP5103');
+% 
+% inputPCAMLP10151 =  MLP([10 15],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP10151');
+% inputPCAMLP10152 =  MLP([10 15],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP10152');
+% inputPCAMLP10153 =  MLP([10 15],Training,Validation,Test,End,inputPCA,target,'inputPCAMLP10153');
 
 
 % -------------------------------------------------------------------------
@@ -172,17 +172,17 @@ inputPCAMLP10153 =  MLP([10 15],Training,Validation,Test,End,inputPCA,target,'in
 % From this can see Shimmer:APQ3 and Shimmer:DDA correlated
 % So can remove Jitter:RAP and Shimmer:ADPQ3 vars
 % Code to get figures - can delete once got
-%temp = [data(:,2:3)  data(:,7:end)];
-%figure;plotmatrix(temp(:,8:13));
-%figure;plotmatrix(temp(:,14:18));
-%figure;plotmatrix(temp(:,3:7));
+% temp = [data(:,2:3)  data(:,7:end)];
+% figure;plotmatrix(temp(:,8:13));
+% figure;plotmatrix(temp(:,14:18));
+% figure;plotmatrix(temp(:,3:7));
 
 % PCA - Remove more vars
 % From this can see last 8 vars have an eigenvalue < 0.0005
 % Have a training set with these variables removed to see the effect
-% [coeff,score,latent]=pca(input.');
-% bar(latent);
-
+[coeff,score,latent] = pca(input.');
+bar(latent);
+latent
 % NETWORK DECISIONS, TESTING and % ANALYSIS
 % Then train the network and record results for each architecture
 % Pre-Processing

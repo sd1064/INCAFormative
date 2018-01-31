@@ -3,7 +3,7 @@ function [ net ] = MLP(neurons,Training,Validation,Test,End,input,target,filenam
 %   Detailed explanation goes here
 
     net = feedforwardnet(neurons);
-    net.trainFcn='trainoss';
+    net.trainFcn='trainbfg';
     net.divideFcn = 'divideind';
     net.divideParam.trainInd = Training:(Validation-1);
     net.divideParam.valInd   = Validation:(Test-1);
